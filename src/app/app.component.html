@@ -1,0 +1,28 @@
+<div class="container Body" Id="Body">
+  <div class="row container" >
+    <h1 style="font-weight: bold;color: blue;text-align:center">File Upoad With fileUploadProgress</h1>
+      <br/>
+      <div class="col-lg-6">
+          <h3>Choose File</h3>            
+          <div class="form-group input">
+              <input type="file" name="image" (change)="fileProgress($event)" class=""/><br>
+          </div>
+          <div  class="form-group" *ngIf="fileUploadProgress">
+              Upload progress: {{ fileUploadProgress }}
+          </div>
+          <div class=" form-group image-preview mb-3 ImageContent" *ngIf="previewUrl">
+              <img [src]="previewUrl" height="300"  />                 
+          </div>
+          <br><br><br><br>
+          <div class="form-group mb-3" class="fileUploadProgress">
+            <span style="font-weight:bold;color:green;" *ngIf="uploadedFilePath">
+                {{uploadedFilePath}}
+              </span>
+          </div>
+          
+          <div class="form-group">
+              <button class="btn Submit"  (click)="onSubmit()">Submit</button>
+          </div>
+      </div>
+  </div>
+</div>
